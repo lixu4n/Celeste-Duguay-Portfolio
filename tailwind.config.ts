@@ -17,7 +17,11 @@ const config: Config = {
         fonctcolor1:"#ECECEC",
         fontcolor2:"#B4B4B4",
         buttoncolor:"#676767",
-        
+ 
+      },
+      screens: {
+        'sm':{'max': '630px'}, 
+
       },
     },
   },

@@ -31,7 +31,7 @@ export default function Home() {
           <p>Ask CelesteGPT for more information on my portfolio.</p>
         </header>
 
-        <section className="w-full max-w-2xl">
+        <section className="w-full sm max-w-2xl">
           <Chatbox />
         </section>
          {/* Footer */}

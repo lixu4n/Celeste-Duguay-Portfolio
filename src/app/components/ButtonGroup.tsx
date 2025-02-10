@@ -10,7 +10,8 @@ export default function ButtonGroup() {
   ];
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="w-full flex-nowrap flex-wrap justify-center gap-3 px-4 sm:px-4">
+    <div className="flex text-center justify-center gap-3">
       {buttons.map((button, index) => (
         <button
           key={index}
@@ -21,6 +22,7 @@ export default function ButtonGroup() {
           <span className="text-sm">{button.label}</span>
         </button>
       ))}
+    </div>
     </div>
   );
 }
