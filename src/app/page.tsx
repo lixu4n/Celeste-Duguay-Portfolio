@@ -1,33 +1,44 @@
+"use client";
+
+import React, { useState } from "react";
+import Navbar from "@/app/components/Navbar";
 import Chatbox from "@/app/components/Chatbox";
+import Footer from "@/app/components/Footer";
+
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
-      <header className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-2">Hi, I'm Céleste!</h1>
-        <p className="text-lg">I specialize in sleek, AI-powered applications.</p>
-        <p>    Ask celesteGPT for more information on my portfolio.</p>
-      </header>
+    <div className="h-screen bg-gptcolor text-fontcolor1 flex flex-col">
+      {/* Navbar */}
+      <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      <section className="w-full max-w-2xl">
-        <Chatbox />
-      </section>
+      {/* Main Content */}
+      <motion.div
+        className="flex-grow flex flex-col items-center justify-center text-center"
+        animate={{ marginLeft: isSidebarOpen ? "16rem" : "0rem" }}
+        transition={{ duration: 0.3, ease: "linear" }}
+      >
+        <header className="mb-8">
+          <h1 className="text-4xl font-bold mb-4" >Hi, I&apos;m Céleste!</h1>
+          <p className="text-lg mb-2">I specialize in sleek, AI-powered applications.</p>
+          <p>Ask CelesteGPT for more information on my portfolio.</p>
+        </header>
 
-      <footer className="mt-8 text-sm text-center">
-  <p>CelesteGPT can make little to no mistakes. Check important info.</p>
-  <div className="flex justify-center space-x-4 mt-2">
-    <a href="https://github.com/yourgithub" target="_blank" className="underline">
-      GitHub
-    </a>
-    <a href="https://linkedin.com/in/yourlinkedin" target="_blank" className="underline">
-      LinkedIn
-    </a>
-    <a href="https://linkedin.com/in/yourlinkedin" target="_blank" className="underline">
-      Info
-    </a>
-  </div>
-</footer>
+        <section className="w-full max-w-2xl">
+          <Chatbox />
+        </section>
+         {/* Footer */}
+      <Footer />
+      </motion.div>
 
+     
     </div>
   );
 }

@@ -6,6 +6,7 @@ export default function ButtonGroup() {
     { label: "Skills", icon: "🛠️", onClick: () => alert("Skills clicked!") },
     { label: "Experience", icon: "📄", onClick: () => alert("Experience clicked!") },
     { label: "Projects", icon: "🚀", onClick: () => alert("Projects clicked!") },
+    { label: "Contacts", icon: "💻", onClick: () => alert("Contact clicked!") },
   ];
 
   return (
@@ -14,8 +15,8 @@ export default function ButtonGroup() {
         <button
           key={index}
           onClick={button.onClick}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-700 text-gray-300 hover:bg-gray-600 transition"
-        >
+         className="flex items-center gap-2 px-4 py-2 rounded-full bg-gptcolor text-fontcolor2 hover:bg-gray-600 transition outline outline-2 outline-chatbox outline-offset-2"
+         >
           <span>{button.icon}</span>
           <span className="text-sm">{button.label}</span>
         </button>
